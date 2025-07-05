@@ -1,4 +1,5 @@
-import App from '@/App.vue'
+import Layout from '@/components/Layout.vue'
+import ConfigurateSeat from '../components/CofigurateSeat.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -6,8 +7,11 @@ const router = createRouter({
 	routes: [
 		{
 			path: '/',
-			name: 'home',
-			component: App,
+			component: Layout,
+			children: [
+				{ path: '', redirect: 'configureSeat' },
+				{ path: 'configureSeat', component: ConfigurateSeat },
+			],
 		},
 	],
 })
