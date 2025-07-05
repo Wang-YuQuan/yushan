@@ -41,4 +41,14 @@ public class MysqlRepository implements IRepository {
 
         namedParameterJdbcTemplate.update(sql, params);
     }
+
+    @Override
+    public void addEmployee(String name, String email) {
+        String sql = "call addEmployee(:name, :email)";
+        Map<String, Object> params = new HashMap<>();
+        params.put("name", name);
+        params.put("email", email);
+
+        namedParameterJdbcTemplate.update(sql, params);
+    }
 }

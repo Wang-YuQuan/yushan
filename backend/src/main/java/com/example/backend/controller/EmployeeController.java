@@ -38,4 +38,16 @@ public class EmployeeController {
         employeeService.setSeatStatus(MODIFY_EMP_ID, MODIFY_FLOOR_SEAT_SEQ);
         return ResponseEntity.ok("Saved successfully");
     }
+
+    @RequestMapping(value = "/api/employee/add_employee")
+    public ResponseEntity<String> addEmployee(@RequestBody String body) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode jsonNode = mapper.readTree(body);
+
+        String name = jsonNode.get("name").asText();
+        String email = jsonNode.get("email").asText();
+
+        employeeService.addEmployee(name, email);
+        return ResponseEntity.ok("Saved successfully");
+    }
 }

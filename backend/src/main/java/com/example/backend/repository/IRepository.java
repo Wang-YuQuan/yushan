@@ -9,4 +9,5 @@ public interface IRepository {
     public List<SeatStatusDTO> getSeatStatus();
     public List<Employee> getEmployeeWithoutSeat();
     public void setSeatStatus(int MODIFY_EMP_ID, int MODIFY_FLOOR_SEAT_SEQ);
+    public void addEmployee(String name, String email);
 }

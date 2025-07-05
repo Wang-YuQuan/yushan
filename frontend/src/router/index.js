@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout.vue'
 import ConfigurateSeat from '../components/CofigurateSeat.vue'
+import RegisterEmployee from '@/components/RegisterEmployee.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -12,6 +13,10 @@ const router = createRouter({
 				{ path: '', redirect: 'configureSeat' },
 				{ path: 'configureSeat', component: ConfigurateSeat },
 			],
+		},
+		{
+			path: '/registerEmployee',
+			component: RegisterEmployee,
 		},
 	],
 })

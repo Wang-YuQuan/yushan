@@ -29,4 +29,8 @@ public class EmployeeService {
         }
         this.repository.setSeatStatus(MODIFY_EMP_ID, MODIFY_FLOOR_SEAT_SEQ);
     }
+
+    public void addEmployee(String name, String email) {
+        this.repository.addEmployee(name, email);
+    }
 }
